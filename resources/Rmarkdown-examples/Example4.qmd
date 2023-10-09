@@ -1,0 +1,37 @@
+---
+title: The title
+format:
+  html:
+    toc: false
+  docx:
+    toc: false
+  pdf:
+    latex_engine: xelatex
+    toc: false
+geometry: paperwidth=12cm,paperheight=15cm,hmargin=1cm,vmargin=1cm
+documentclass: article
+mainfont: Arial
+---
+
+```{r}
+#| label: packages
+#| message: false
+#| echo: false
+
+library(tidyverse)
+library(knitr)
+```
+
+# Section 1
+
+Bla bla something about @fig-boddata .
+
+```{r}
+#| label: fig-boddata
+#| echo: false
+#| fig-cap: Biochemical oxygen demand
+#| out-width: "60%"
+
+ggplot(BOD) +
+ geom_point(aes(y=demand, x=Time))
+```

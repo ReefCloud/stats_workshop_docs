@@ -1,0 +1,69 @@
+---
+title: The title
+format:
+  html:
+    toc: true
+    toc_depth: 2
+    number_sections: yes
+    fig_width: 5
+    fig_height: 5
+    highlight: zenburn
+    df_print: kable
+    code_folding: hide
+    theme: spacelab
+  docx:
+    toc: true
+    toc_depth: 2
+    number_sections: yes
+    fig_width: 5
+    fig_height: 5
+    highlight: zenburn
+    df_print: kable	
+  pdf:
+    latex_engine: xelatex
+    toc: true
+    toc_depth: 2
+    number_sections: yes
+    fig_width: 5
+    fig_height: 5
+    highlight: zenburn
+    df_print: kable
+geometry: paperwidth=12cm,paperheight=15cm,hmargin=1cm,vmargin=1cm
+documentclass: article
+mainfont: Arial
+---
+
+```{r}
+#| label: packages
+#| message: false
+#| echo: false
+
+library(tidyverse)
+library(knitr)
+```
+# Section 1
+Text with embedded R code.
+
+```{r Summary}
+mean(rnorm(10))
+```
+```{r head}
+head(cars)
+```
+
+## Subsection 1						
+
+We can include a figure
+
+```{r Plot, fig.cap='Gaussian density.',message=FALSE}
+library(tidyverse)
+data.frame(x=rnorm(1000)) %>%
+	ggplot(aes(x=x)) + geom_density()
+```
+
+Perhaps even a table
+
+```{r table}
+library(knitr)
+kable(summary(cars), caption='Summary of the cars data set')
+```

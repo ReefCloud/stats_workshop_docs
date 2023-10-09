@@ -1,0 +1,8 @@
+\documentclass{$documentclass$}
+\usepackage{hyperref}
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+\begin{document}
+$body$
+\end{document}

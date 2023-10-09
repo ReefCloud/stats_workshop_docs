@@ -1,0 +1,28 @@
+---
+title: The title
+format:
+  pdf:
+    latex_engine: xelatex
+    template: latex.template
+    highlight: none
+documentclass: article
+classoption: a4paper
+mainfont: Arial
+mathfont: LiberationMono
+monofont: DejaVu Sans Mono
+abstract: This is the abstract
+urlcolor: red
+---
+
+Section
+===========
+Text with embedded R code.
+
+```{r}
+#| label: head
+head(cars)
+```
+
+$$
+y_i = \beta_0 + \beta_1 x_i
+$$

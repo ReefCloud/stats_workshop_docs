@@ -1,0 +1,40 @@
+---
+title: The title
+format:
+  html:
+    toc: false
+  docx:
+    toc: false
+  pdf:
+    latex_engine: xelatex
+    toc: false
+geometry: paperwidth=12cm,paperheight=15cm,hmargin=1cm,vmargin=1cm
+documentclass: article
+mainfont: Arial
+---
+
+```{r}
+#| label: packages
+#| message: false
+#| echo: false
+
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(flextable)
+```
+
+# Section 1
+
+![AIMS water quality monitoring](AIMS_wq.jpg){#fig-aimswq width=20%}
+
+We can refer to the figures as see @fig-aimswq and @fig-aimswq1 .
+
+```{r AIMSwq}
+#| label: fig-aimswq1
+#| echo: false
+#| fig-cap: AIMS water quality sampling
+#| out-width: "20%"
+
+include_graphics('AIMS_wq.jpg')
+```

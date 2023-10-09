@@ -1,0 +1,46 @@
+---
+title: The title
+format:
+  html:
+    toc: false
+  docx:
+    toc: false
+  pdf:
+    latex_engine: xelatex
+    toc: false
+geometry: paperwidth=12cm,paperheight=15cm,hmargin=1cm,vmargin=1cm
+documentclass: article
+mainfont: Arial
+---
+
+```{r}
+#| label: packages
+#| message: false
+#| echo: false
+
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(flextable)
+```
+
+# Section 1
+
+Bla bla something about @tbl-boddata .
+
+```{r}
+#| label: tbl-boddata
+#| echo: false
+#| tbl-cap: Biochemical oxygen demand
+
+if (knitr:::pandoc_to('latex')) {
+ kable(BOD, format='latex', booktabs=TRUE) %>%
+    kable_styling(latex_options = "HOLD_position")
+} else if (knitr:::pandoc_to('html')) {
+ kable(BOD, format='html', booktabs=TRUE)
+} else if (knitr:::pandoc_to('docx')) { 
+ flextable(BOD) %>%
+    fontsize(size=8, part='all') %>%
+	bold(part='header')
+} 
+```
